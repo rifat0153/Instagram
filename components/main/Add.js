@@ -5,11 +5,12 @@ import { Camera } from 'expo-camera';
 export default function App() {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
-
+useState
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
+      const status  = await Camera.isAvailableAsync()
+      console.log({status});
+      setHasPermission(status);
     })();
   }, []);
 
@@ -39,3 +40,27 @@ export default function App() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  camera: {
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    margin: 20,
+  },
+  button: {
+    flex: 0.1,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 18,
+    color: 'white',
+  },
+});

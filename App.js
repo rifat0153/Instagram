@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import store from './redux/store';
-import { useDispatch, useSelector } from 'react-redux';
 
 import LandingScreen from './components/auth/Landing';
 import RegisterScreen from './components/auth/Register';
@@ -45,7 +44,6 @@ const App = (props) => {
 
         firebase.auth().onAuthStateChanged((user) => {
             if (!user) {
-                console.log('user: ', user);
                 setLoggedIn(false);
                 setLoaded(true);
             }
@@ -56,8 +54,6 @@ const App = (props) => {
             }
         })
     }, [])
-
-    { console.log({ loggedIn }) }
 
     if (!loaded) {
         return (

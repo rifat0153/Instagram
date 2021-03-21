@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
+import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
 import firebase from 'firebase';
 import { useState } from 'react';
 
@@ -27,7 +27,7 @@ const Register = (props) => {
 
 
     return (
-        <View>
+        <View style={styles.container} >
             <TextInput
                 placeholder="name"
                 onChangeText={(name) => setName(name)}
@@ -49,6 +49,35 @@ const Register = (props) => {
     );
 
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "center",
+      backgroundColor: "#e9f4f5",
+      padding: 10,
+      margin: 10,
+    },
+    top: {
+      flex: 0.3,
+      backgroundColor: "grey",
+      borderWidth: 5,
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+    },
+    middle: {
+      flex: 0.3,
+      backgroundColor: "beige",
+      borderWidth: 5,
+    },
+    bottom: {
+      flex: 0.3,
+      backgroundColor: "pink",
+      borderWidth: 5,
+      borderBottomLeftRadius: 20,
+      borderBottomRightRadius: 20,
+    },
+  });
 
 export default Register
 
