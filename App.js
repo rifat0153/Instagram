@@ -12,6 +12,7 @@ import LandingScreen from './components/auth/Landing';
 import RegisterScreen from './components/auth/Register';
 import MainScreen from './components/Main';
 import AddScreen from './components/main/Add';
+import SandboxScreen from './components/main/Sandbox';
 
 
 
@@ -81,9 +82,10 @@ const App = (props) => {
     return (
         <Provider store={store}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Main">
+                <Stack.Navigator initialRouteName="Sandbox">
                     <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="Add" component={AddScreen}  />
+                    <Stack.Screen name="Sandbox" component={SandboxScreen} options={{ headerShown: false }} />
                 </Stack.Navigator>
             </NavigationContainer>
         </Provider>

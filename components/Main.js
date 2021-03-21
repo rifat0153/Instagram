@@ -62,6 +62,22 @@ const Main = (props) => {
                     ),
                 }}
             />
+            <Tab.Screen name="SandboxContainer" component={EmptyScreen}
+                listeners = {({navigation}) => ({
+                    tabPress: event => {
+                        event.preventDefault();
+                        navigation.navigate("Sandbox")
+                    }
+                })}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons
+                            name="plus-box"
+                            color={color}
+                            size={26} />
+                    ),
+                }}
+            />
             <Tab.Screen name="Profile" component={ProfileScreen}
                 options={{
                     tabBarIcon: ({ color, size }) => (
